@@ -1,0 +1,6 @@
+[submodule "CoinNetwork"]
+	path = CoinNetwork
+	url = https://github.com/beuoon/CoinNetwork.git
+[submodule "CoinWebServer"]
+	path = CoinWebServer
+	url = https://github.com/beuoon/CoinWebServer
