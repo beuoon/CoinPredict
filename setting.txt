@@ -1,0 +1,51 @@
+[apt]
+libmysqlclient-dev
+libcurl4-openssl-dev
+libssl-dev
+
+[c++ lib]
+rapidjson					# https://rapidjson.org/
+eigen						# http://eigen.tuxfamily.org/
+
+[java]
+json-simple.jar				# https://code.google.com/archive/p/json-simple/downloads
+mysql-connector-java.jar	# https://www.mysql.com/products/connector/ (JDBC)
+
+[mysql]
+
+create database bitcoin;
+
+use bitcoin;
+
+create table history (
+	number int unsigned not null auto_increment primary key,
+	datetime datetime not null,
+	trans_ask_min double not null,
+	trans_ask_avrg double not null,
+	trans_ask_unit double not null,
+	trans_bid_max double not null,
+	trans_bid_avrg double not null,
+	trans_bid_unit double not null,
+	order_ask_min double not null,
+	order_ask_avrg double not null,
+	order_bid_max double not null,
+	order_bid_avrg double not null);
+
+create table train_data (
+	number int unsigned not null primary key,
+	trans_ask_min double not null,
+	trans_ask_avrg double not null,
+	trans_ask_unit double not null,
+	trans_bid_max double not null,
+	trans_bid_avrg double not null,
+	trans_bid_unit double not null,
+	order_ask_min double not null,
+	order_ask_avrg double not null,
+	order_bid_max double not null,
+	order_bid_avrg double not null);
+
+create table network (
+	id int unsigned not null auto_increment primary key,
+	datetime datetime not null,
+	benefit double not null,
+	data MEDIUMTEXT not null);
